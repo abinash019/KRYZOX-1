@@ -90,8 +90,7 @@ const RouteHandler = () => {
                 path="/admin/*"
                 element={
                     <AdminProtection>
-                        <SideNavLayout />
-                        //{" "}
+                        <SideNavLayout />{" "}
                     </AdminProtection>
                 }
             >

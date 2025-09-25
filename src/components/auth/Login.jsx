@@ -10,47 +10,60 @@ import { login, setLoggedData, setRole } from "../../store/slices/auth.slice";
 import Footer from "../Footer/Footer";
 import NavBar from "../Navbar/NavBar";
 
-export default function LoginPage() {
+export default function Login() {
     const [formData, setFormData] = useState({
         username: "",
         password: "",
     });
     const [showPassword, setShowPassword] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
     const { postData, result, responseError, loading, statusCode } =
         usePostData();
-    const [isSuccess, setIsSuccess] = useState(false);
 
+    // handle response from API
     useEffect(() => {
-        if (statusCode === 200) {
-            localStorage.setItem(
-                "token",
-                JSON.stringify("Sandip " + result?.token)
-            );
+        if (statusCode === 200 && result) {
+            const authData = {
+                token: result?.token,
+                user: result?.user,
+                role: result?.user?.roles[0]?.name || "ROLE_USER",
+            };
+
+            // save auth data to localStorage
+            localStorage.setItem("auth", JSON.stringify(authData));
+
+            // update redux
             dispatch(login());
-            if (result?.user?.roles[0]?.name === "ROLE_ADMIN") {
-                dispatch(setRole({ role: "ROLE_ADMIN" }));
-            }
+            dispatch(setLoggedData(authData.user));
+            dispatch(setRole({ role: authData.role }));
+
             setIsSuccess(true);
+
+            // redirect after 2s
             const timer = setTimeout(() => {
                 setIsSuccess(false);
-                dispatch(setLoggedData(result?.user));
                 navigate("/");
-            }, 3000);
+            }, 2000);
+
             return () => clearTimeout(timer);
         }
+
         if (responseError) {
             toast.error(responseError || "Failed to login");
         }
-    }, [responseError, result]);
+    }, [statusCode, result, responseError, dispatch, navigate]);
 
+    // input handler
     const handleInput = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    // submit login form
     const loginHandler = async (e) => {
         e.preventDefault();
         await postData("/auth/login", formData);
