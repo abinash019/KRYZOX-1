@@ -264,7 +264,7 @@ const TestTabSection = () => {
         </div>
       ) : (!loading || !tournamentLoading) && tournaments.length === 0 ? (
         <div className="w-full h-[300px] flex items-center justify-center text-red-700">
-          No data found
+          No data found !!
         </div>
       ) : (
         <DataTable loading={loading}/>
