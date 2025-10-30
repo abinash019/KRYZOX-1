@@ -10,7 +10,7 @@ import LoginBtn from "./ui/LoginBtn";
 // import { ProfileDropdown } from "./ProfileDropdown";
 // navbar links
 const navLinks = [
-  { name: "Home", path: "#", id: "home" },
+  { name: "Home", path: "/", id: "home" },
   { name: "Games", path: "#", id: "games" },
   { name: "Features", path: "#", id: "features" },
   { name: "Earnings", path: "#", id: "earnings" },
@@ -19,6 +19,7 @@ const navLinks = [
 // logo design
 const Logo = () => {
   return (
+    <NavLink to="/">
     <div className="flex items-center gap-4">
       <img
         src="/home/logo/logo.png"
@@ -33,6 +34,7 @@ const Logo = () => {
         </span>
       </div>
     </div>
+    </NavLink>
   );
 };
 

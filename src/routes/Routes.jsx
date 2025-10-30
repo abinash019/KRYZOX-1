@@ -3,6 +3,8 @@ import { Route, Routes } from "react-router-dom";
 // Pages
 import Home from "../pages/Home";
 
+// Account Deletion Page
+import AccountDeletionRequest from "../pages/accountDeletion/AccountDeletion";
 // Admin pages
 import Analytics from "../pages/admin/analytics/Analytics";
 import FullMapHandeling from "../pages/admin/full-map-rooms/FullMapHandeling";
@@ -54,6 +56,7 @@ const RouteHandler = () => {
         <Routes>
             {/* Public Routes */}
             <Route exact path="/" element={<Home />} />
+            <Route path="/account-deletion" element={<AccountDeletionRequest />} />
             <Route path="/test" element={<UpcomingTournaments />} />
             <Route path="/privacy/legal" element={<LegalCompliance />} />
 

@@ -122,6 +122,9 @@ const Footer = () => {
         <div>
           <ul className="text-sm list-none flex flex-col mt-15  gap-5 md:mt-0 md:flex-wrap md:flex-row">
             <li className="hover:text-white transition-colors duration-300">
+              <Link to="/account-deletion">Delete Account</Link>
+            </li>
+            <li className="hover:text-white transition-colors duration-300">
               <Link to="/privacy-policy">Privacy Policy</Link>
             </li>
             <li className="hover:text-white transition-colors duration-300">
