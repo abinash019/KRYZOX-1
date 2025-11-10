@@ -5,7 +5,7 @@ import NavBar from "../../components/Navbar/NavBar";
 
 export default function AccountDeletionRequest() {
   const [isSuccess, setIsSuccess] = useState(false);
-  const [state, handleSubmit] = useForm("xjkoavnb"); // Replace with your own Formspree ID
+  const [state, handleSubmit] = useForm("xjkoavnb"); 
   const formRef = useRef(null);
 
   useEffect(() => {
@@ -136,3 +136,4 @@ export default function AccountDeletionRequest() {
     </div>
   );
 }
+
