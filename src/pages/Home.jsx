@@ -7,12 +7,19 @@ const Feature2 = lazy(() => import("../components/Features/Feature2/Feature2"));
 const Feature3 = lazy(() => import("../components/Features/Feature3/Feature3"));
 import ErrorBoundry from "../utils/ErrorBoundry";
 import ContactUsForm from "../components/contactus/ContactUs";
+import Pricing from "../components/pricing/Pricing";
+
 const Home = () => {
   return (
     <div className="max-w-[1600px] m-auto">
       <NavBar />
+
       <div className="pt-[80px] w-full">
-        <HeroSection />
+        {/* 👇 Give this section an id="home" */}
+        <section id="home">
+          <HeroSection />
+        </section>
+
         <ErrorBoundry>
           <Suspense
             fallback={
@@ -21,12 +28,32 @@ const Home = () => {
               </div>
             }
           >
-            <Feature1 />
-            <Feature2 />
-            <Feature3 />
+            {/* 👇 Wrap each feature section with its matching id */}
+            <section id="games">
+              <Feature1 />
+            </section>
+
+            <section id="features">
+              <Feature2 />
+            </section>
+
+            <section id="earning">
+              <Feature3 />
+            </section>
+
           </Suspense>
         </ErrorBoundry>
-        <ContactUsForm />
+
+        {/* 👇 Pricing section (if you have a separate component) */}
+        <section id="pricing">
+          <Pricing />
+        </section>
+
+        {/* 👇 Contact section */}
+        <section id="contactUs">
+          <ContactUsForm />
+        </section>
+
         <Footer />
       </div>
     </div>

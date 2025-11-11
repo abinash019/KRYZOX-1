@@ -19,7 +19,7 @@ export default function HeroSection() {
       </div>
 
       {/* ✅ Vertical Lines */}
-      {[...Array(7)].map((_, i) => ( 
+      {[...Array(7)].map((_, i) => (
         <div
           key={i}
           className={clsx(
@@ -108,7 +108,7 @@ export default function HeroSection() {
         style={{
           background:
             "linear-gradient(to right, transparent, #c84de5, transparent)",
-  
+
           animationDuration: "1.5s",
         }}
       />
@@ -145,10 +145,19 @@ export default function HeroSection() {
         {/* buttons */}
         <section className="h-auto flex flex-wrap gap-5 text-lg pt-8 justify-center items-center font-semibold">
           <button
-            className="group relative px-10 py-5 rounded-xl transition-all duration-500 hover:scale-110 hover:shadow-2xl bg-[length:200%_100%] hover:bg-[position:100%_0] mb-2 md:mb-0"
+            className="group relative px-10 py-5 rounded-xl transition-all duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer bg-[length:200%_100%] hover:bg-[position:100%_0] mb-2 md:mb-0"
             style={{
-              backgroundImage:
-                "linear-gradient(to right, #c84de5, #79a5d5, #5e41a1)",
+              backgroundImage: "linear-gradient(to right, #c84de5, #79a5d5, #5e41a1)",
+            }}
+            onClick={() => {
+              // Trigger download
+              const link = document.createElement("a");
+              link.href =
+                "https://drive.usercontent.google.com/download?id=1bMlW5JKRwuQJtkTJzJfk2TkGdgn6Vavb&export=download&authuser=2";
+              link.download = "KryzoxApp.apk"; // file name
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
             }}
           >
             {/* Glowing overlay */}
@@ -159,21 +168,21 @@ export default function HeroSection() {
               }}
             ></div>
 
-            {/* This text will now be visible correctly */}
+            {/* Button text */}
             <span className="relative z-10 text-white">
-              Coming soon For Android
+              Download For Android
             </span>
           </button>
 
           <button
-            className="group relative px-10 py-5 border-2 rounded-xl font-semibold text-lg transition-all duration-500 hover:scale-110 hover:shadow-2xl overflow-hidden"
+            className="group relative px-10 py-5 border-2 rounded-xl font-semibold text-lg transition-all duration-500 cursor-pointer hover:scale-110 hover:shadow-2xl overflow-hidden"
             style={{
               borderColor: "#79a5d5",
               color: "#79a5d5",
             }}
           >
             <span className="group-hover:text-white transition-colors duration-500 relative z-10">
-              Coming soon For iOS
+              For iOS
             </span>
             {/* Enhanced ripple effect */}
             <div

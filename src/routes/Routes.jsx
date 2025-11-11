@@ -50,6 +50,7 @@ import ViewTournament from "../pages/admin/tournaments/pages/View";
 
 // Optional: import AdminProtection if you want to protect admin routes
 import AdminProtection from "./AdminProtection";
+import RefundPolicy from "../components/Footer/pages/RefundPolicy";
 
 const RouteHandler = () => {
     return (
@@ -60,6 +61,7 @@ const RouteHandler = () => {
             <Route path="/test" element={<UpcomingTournaments />} />
             <Route path="/privacy/legal" element={<LegalCompliance />} />
 
+
             {/* Footer Layout Routes */}
             <Route element={<FooterLayout />}>
                 <Route
@@ -67,6 +69,7 @@ const RouteHandler = () => {
                     element={<TermsAndConditions />}
                 />
                 <Route path="privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="refund-policy" element={<RefundPolicy />} />
                 <Route path="cookie-policy" element={<CookiePolicy />} />
                 <Route path="about-us" element={<AboutUs />} />
                 <Route path="disclaimer" element={<Disclaimer />} />

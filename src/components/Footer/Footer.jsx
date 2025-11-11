@@ -28,7 +28,7 @@ const data3 = [
 
 const data4 = [
   { content: "Company", link: "/company" },
-  { content: "About", link: "/about-us" },
+  { content: "AboutUs", link: "/about-us" },
   { content: "Careers", link: "/careers" },
   { content: "Press", link: "/press" },
   { content: "Partners", link: "/partners" },
@@ -117,12 +117,16 @@ const Footer = () => {
       {/* privacy or additional inof section */}
       <section className="flex flex-col justify-between  text-sm text-gray-400 mt-10 md:flex-wrap md:flex-row">
         <div>
-          <p>© 2024 KRYZOX. All rights reserved.</p>
+          <p>© {new Date().getFullYear()}  KRYZOX | Owned by Krishna Kumar.</p>
         </div>
         <div>
           <ul className="text-sm list-none flex flex-col mt-15  gap-5 md:mt-0 md:flex-wrap md:flex-row">
             <li className="hover:text-white transition-colors duration-300">
               <Link to="/account-deletion">Delete Account</Link>
+            </li>
+
+            <li className="hover:text-white transition-colors duration-300">
+              <Link to="/refund-policy">Refund Policy</Link>
             </li>
             <li className="hover:text-white transition-colors duration-300">
               <Link to="/privacy-policy">Privacy Policy</Link>

@@ -5,17 +5,17 @@ const AboutUs = () => {
     <div className="bg-[#1B1233] text-white px-6 md:px-16 lg:px-32 py-12">
       <div className="max-w-5xl mx-auto">
         {/* Page Title */}
-      <h1 className="text-4xl md:text-5xl font-bold text-center mb-2 relative">
-        <span
-          className="text-transparent bg-clip-text"
-          style={{
-            background: "linear-gradient(45deg, #c84de5, #79a5d5)",
-            WebkitBackgroundClip: "text",
-          }}
-        >
-          About Us
-        </span>
-      </h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-2 relative">
+          <span
+            className="text-transparent bg-clip-text"
+            style={{
+              background: "linear-gradient(45deg, #c84de5, #79a5d5)",
+              WebkitBackgroundClip: "text",
+            }}
+          >
+            About Us
+          </span>
+        </h1>
         <p className="text-sm text-center text-gray-400 mb-12">
           Last Updated: [Insert Update Date]
         </p>
@@ -79,31 +79,46 @@ const AboutUs = () => {
             </ul>
           </div>
 
-          <div className="border-t border-gray-700 pt-6 space-y-2 text-base text-gray-300">
+          <div className="mt-12 border-t border-gray-700 pt-6 px-1 md:px-1 lg:px-1 text-gray-300 space-y-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#c84de5] mb-4">🏢 Kryzox</h2>
             <p>
-              <strong>Headquarters:</strong> [Insert Country]
+              <strong>Owned By:</strong>{" "}
+              <span className="text-[#79a5d5] font-semibold">Krishna Kumar</span>
             </p>
             <p>
-              <strong>Contact Email:</strong>{" "}
+              <strong>Headquarters:</strong>{" "}
+              <span className="text-[#79a5d5]">India</span>
+            </p>
+            <p>
+              <strong>Industry:</strong>{" "}
+              <span className="text-[#79a5d5]">Online Gaming & Esports</span>
+            </p>
+            <p>
+              <strong>Email:</strong>{" "}
               <a
-                href="mailto:kryzox@gmail.com"
-                className="text-purple-400 hover:underline"
+                href="mailto:support@kryzox.com"
+                className="text-[#c84de5] hover:underline transition-all"
               >
-                kryzox@gmail.com
+                support@kryzox.com
               </a>
             </p>
             <p>
               <strong>Website:</strong>{" "}
               <a
-                href="http://www.kryzox.com"
+                href="https://www.kryzox.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-purple-400 hover:underline"
+                className="text-[#c84de5] hover:underline transition-all"
               >
                 www.kryzox.com
               </a>
             </p>
+            <p className="mt-6 text-gray-500 text-sm">
+              © {new Date().getFullYear()} KRYZOX | Owned by Krishna Kumar
+            </p>
           </div>
+
+
         </section>
       </div>
     </div>

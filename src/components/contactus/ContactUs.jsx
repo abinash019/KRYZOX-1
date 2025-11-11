@@ -11,10 +11,10 @@ function ContactUsForm() {
     if (state.succeeded && formRef.current) {
       formRef.current.reset();
       setIsSuccess(true);
-      const timer=setTimeout(() => {
+      const timer = setTimeout(() => {
         setIsSuccess(false);
       }, 3000);
-      return ()=>clearTimeout(timer);
+      return () => clearTimeout(timer);
     }
   }, [state.succeeded]);
 
@@ -38,6 +38,58 @@ function ContactUsForm() {
           team is ready to respond faster than a respawn timer.
         </p>
       </section>
+
+
+      {/* Contact Info */}
+      {/* Contact Info (Card Style in a Row) */}
+      <div className="max-w-6xl mx-auto mt-12 px-6">
+        <div className="flex flex-col md:flex-row justify-center gap-8">
+
+          {/* Phone Card */}
+          <div className="flex flex-col items-center text-center bg-[#1B1230]/80 border border-purple-500/30 rounded-2xl p-6 w-full md:w-1/3 shadow-lg hover:shadow-purple-500/30 hover:-translate-y-2 transition-all duration-500 backdrop-blur-md">
+            <div className="p-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-3xl shadow-md mb-4">
+              📞
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-1">Phone</h3>
+            <a
+              href="tel:+919876543210"
+              className="text-purple-300 font-medium hover:text-white transition-colors"
+            >
+              +91 9876543210
+            </a>
+          </div>
+
+          {/* Email Card */}
+          <div className="flex flex-col items-center text-center bg-[#1B1230]/80 border border-purple-500/30 rounded-2xl p-6 w-full md:w-1/3 shadow-lg hover:shadow-purple-500/30 hover:-translate-y-2 transition-all duration-500 backdrop-blur-md">
+            <div className="p-4 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 text-3xl shadow-md mb-4">
+              📧
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-1">Email</h3>
+            <a
+              href="mailto:support@kryzox.com"
+              className="text-purple-300 font-medium hover:text-white transition-colors"
+            >
+              support@kryzox.com
+            </a>
+          </div>
+
+          {/* Address Card */}
+          <div className="flex flex-col items-center text-center bg-[#1B1230]/80 border border-purple-500/30 rounded-2xl p-6 w-full md:w-1/3 shadow-lg hover:shadow-purple-500/30 hover:-translate-y-2 transition-all duration-500 backdrop-blur-md">
+            <div className="p-4 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 text-3xl shadow-md mb-4">
+              🏢
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-1">Address</h3>
+            <p className="text-purple-300 font-medium">
+              622 Manglam Electronic Market,<br />
+              Jaipur, Rajasthan, India 302001
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+
+
 
       {/* Success message */}
       {(state.succeeded && isSuccess) && (
