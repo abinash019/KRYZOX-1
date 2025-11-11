@@ -36,7 +36,7 @@ export default function HeroSection() {
         />
       ))}
 
-      {/* 🔆 Large Floating Background Circles (pulse) */}
+      {/* 🔆 Large Floating Background Circl (pulse) */}
       <div
         className="absolute rounded-full bg-purple-700 blur-3xl  opacity-30 animate-pulse z-0"
         style={{
