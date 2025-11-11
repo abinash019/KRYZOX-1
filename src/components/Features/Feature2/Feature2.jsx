@@ -93,7 +93,7 @@ import "./Feature2.css";
 const gameFeatures = [
   {
     bg: "linear-gradient(135deg, #c84de5, #79a5d5, #5e41a1)",
-    image: "/home/games/freefire.png",
+    image: "/home/games/FF.svg",
     title: "Free Fire",
     description:
       "Master fast-paced battles and earn rewards for your survival skills",
@@ -102,7 +102,7 @@ const gameFeatures = [
   },
   {
     bg: "linear-gradient(135deg, #5e41a1, #4b1670, #84147c)",
-    image: "/home/games/pubg.png",
+    image: "/home/games/PUBG.svg",
     title: "PUBG/BGMI",
     description:
       "Tactical gameplay meets earning potential in this skill-based arena",
@@ -111,7 +111,7 @@ const gameFeatures = [
   },
   {
     bg: "linear-gradient(135deg, #79a5d5, #294a72, #2b2055)",
-    image: "/home/games/ludo.png",
+    image: "/home/games/Ludo.svg",
     title: "Ludo King",
     description:
       "Classic board game with modern earning mechanics for strategic minds",
@@ -120,7 +120,7 @@ const gameFeatures = [
   },
   {
     bg: "linear-gradient(135deg, #240d39, #2b2055, #4b1670)",
-    image: "/home/games/chess.png",
+    image: "/home/games/Chess.svg",
     title: "Chess Master",
     description:
       "Intellectual warfare where every move can earn you real money",
@@ -170,7 +170,7 @@ const Feature2 = () => {
           }}
         >
           Earn While You Play
-        </span> 
+        </span>
       </h1>
       <p className="text-[20px] inline">Master these popular games and </p>
       <p className="inline text-[20px] text-[#c130e1]">

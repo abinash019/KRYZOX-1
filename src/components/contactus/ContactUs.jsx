@@ -52,10 +52,10 @@ function ContactUsForm() {
             </div>
             <h3 className="text-xl font-semibold text-white mb-1">Phone</h3>
             <a
-              href="tel:+919876543210"
+              href="tel:+91 9162435463"
               className="text-purple-300 font-medium hover:text-white transition-colors"
             >
-              +91 9876543210
+              +91 9162435463
             </a>
           </div>
 
@@ -80,8 +80,9 @@ function ContactUsForm() {
             </div>
             <h3 className="text-xl font-semibold text-white mb-1">Address</h3>
             <p className="text-purple-300 font-medium">
-              622 Manglam Electronic Market,<br />
-              Jaipur, Rajasthan, India 302001
+              1688 Hiramma, Main Road Hirauta Duma, <br />
+              Sub Health Centre Dumma Hirauta, <br />
+              Hirauta Duma, Sheohar, Bihar 843329
             </p>
           </div>
 

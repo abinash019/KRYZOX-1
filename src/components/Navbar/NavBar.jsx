@@ -1,23 +1,20 @@
 import { useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
-import { useSelector } from "react-redux";
-import { AlignJustify as Hamburger, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { AlignJustify as Hamburger, X } from "lucide-react";
 import clsx from "clsx";
 import ProfileDropdown from "./ProfileDropdown";
 import LoginBtn from "./ui/LoginBtn";
+import { useSelector } from "react-redux";
 import "./navbar.css";
 
-// navbar links
 const navLinks = [
-  { name: "Home", path: "/", id: "home" },
-  { name: "Games", path: "/", id: "games" },
-  { name: "Features", path: "/", id: "features" },
-  { name: "Pricing", path: "/pricing", id: "pricing" },
-  { name: "ContactUs", path: "/contactus", id: "contactUs" },
+  { name: "Home", path: "/" },
+  { name: "Games", path: "/games" },
+  { name: "Features", path: "/features" },
+  { name: "Pricing", path: "/pricing" },
+  { name: "ContactUs", path: "/contactus" },
 ];
 
-// logo component
 const Logo = () => (
   <NavLink to="/">
     <div className="flex items-center gap-4">
@@ -37,39 +34,25 @@ const Logo = () => (
   </NavLink>
 );
 
-// mobile navigation
 const MobileNavigation = ({ setIsMobileNavOpen, isMobileNavOpen, isLoggedIn, loggedInUserInfo }) => (
   <div
     className={clsx(
       "fixed inset-0 gap-10 w-full h-full bg-gray-900 bg-opacity-90 z-50 flex flex-col pt-10 px-10 overflow-hidden translate-x-[-100%] transition-transform duration-500 ease-in-out md:hidden",
-      {
-        "translate-x-[0%]": isMobileNavOpen,
-        "translate-x-[100%] pointer-events-none": !isMobileNavOpen,
-      }
+      { "translate-x-[0%]": isMobileNavOpen, "translate-x-[100%] pointer-events-none": !isMobileNavOpen }
     )}
   >
-    <X
-      size={30}
-      className="absolute top-5 right-5 text-white cursor-pointer block md:hidden"
-      onClick={() => setIsMobileNavOpen(false)}
-    />
+    <X size={30} className="absolute top-5 right-5 text-white cursor-pointer block md:hidden" onClick={() => setIsMobileNavOpen(false)} />
     <Logo />
     <div className="flex flex-col gap-10 mt-10">
       {navLinks.map((link) => (
-        <ScrollLink
+        <NavLink
           key={link.name}
-          to={link.id}
-          smooth={true}
-          duration={500}
-          spy={true}
-          onClick={() => {
-            window.history.pushState({}, "", link.path); // update URL
-            setIsMobileNavOpen(false); // close mobile menu
-          }}
+          to={link.path}
           className="text-gray-300 hover:text-white transition-all duration-500 cursor-pointer"
+          onClick={() => setIsMobileNavOpen(false)}
         >
           {link.name}
-        </ScrollLink>
+        </NavLink>
       ))}
       {!isLoggedIn ? (
         <NavLink to="/auth/login">
@@ -93,31 +76,18 @@ const NavBar = () => {
         <ul className="list-none h-auto w-auto font-semibold text-gray-300 hidden md:flex gap-10">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <ScrollLink
-                to={link.id}
-                smooth={true}
-                duration={500}
-                spy={true}
-                onClick={() => window.history.pushState({}, "", link.path)} // URL update
+              <NavLink
+                to={link.path}
                 className="link group relative cursor-pointer"
               >
-                <span
-                  className="absolute inset-0 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-lg blur-sm"
-                  style={{
-                    background:
-                      "linear-gradient(to right, rgba(121, 165, 213, 0.3), rgba(200, 77, 229, 0.3))",
-                  }}
-                ></span>
-                <span className="z-10">{link.name}</span>
-              </ScrollLink>
+                {link.name}
+              </NavLink>
             </li>
           ))}
         </ul>
         {!isLoggedIn ? (
           <NavLink to="/auth/login">
-            <LoginBtn className="hidden md:block" userData={loggedInUserInfo}>
-              Login
-            </LoginBtn>
+            <LoginBtn className="hidden md:block" userData={loggedInUserInfo}>Login</LoginBtn>
           </NavLink>
         ) : (
           <div className="hidden md:block">
@@ -133,11 +103,7 @@ const NavBar = () => {
         loggedInUserInfo={loggedInUserInfo}
       />
 
-      <Hamburger
-        className="block md:hidden"
-        size={30}
-        onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
-      />
+      <Hamburger className="block md:hidden" size={30} onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} />
     </nav>
   );
 };

@@ -51,12 +51,22 @@ import ViewTournament from "../pages/admin/tournaments/pages/View";
 // Optional: import AdminProtection if you want to protect admin routes
 import AdminProtection from "./AdminProtection";
 import RefundPolicy from "../components/Footer/pages/RefundPolicy";
+import PageUnderDevelopment from "../components/Footer/pages/PageUnderDevelopment";
 
 const RouteHandler = () => {
     return (
         <Routes>
-            {/* Public Routes */}
+            {/* Public Route */}
             <Route exact path="/" element={<Home />} />
+            <Route path="/games" element={<Home scrollTo="games" />} />
+            <Route path="/features" element={<Home scrollTo="features" />} />
+            <Route path="/earning" element={<Home scrollTo="earning" />} />
+            <Route path="/pricing" element={<Home scrollTo="pricing" />} />
+            <Route path="/contactus" element={<Home scrollTo="contactUs" />} />
+            <Route path="/download" element={<Home scrollTo="home" />} />
+
+
+
             <Route path="/account-deletion" element={<AccountDeletionRequest />} />
             <Route path="/test" element={<UpcomingTournaments />} />
             <Route path="/privacy/legal" element={<LegalCompliance />} />
@@ -64,6 +74,7 @@ const RouteHandler = () => {
 
             {/* Footer Layout Routes */}
             <Route element={<FooterLayout />}>
+                <Route path="under-development" element={<PageUnderDevelopment />} />
                 <Route
                     path="terms-and-conditions"
                     element={<TermsAndConditions />}

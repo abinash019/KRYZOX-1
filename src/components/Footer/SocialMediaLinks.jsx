@@ -1,11 +1,21 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
-const SocialMediaLinks = ({icon,alternative,color,link}) => {
+
+const SocialMediaLinks = ({ icon, alternative, color, link }) => {
   return (
-    <div className={clsx("h-10 w-10 rounded-full bg-[#281C4D] grid place-content-center",color,"transition-all duration-300 hover:scale-110")}>
-      <a href={link} target="_blank"><img src={icon}  alt={alternative} className="w-8 h-8 object-cover rounded-full" /></a>
-    </div>
-  )
-}
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={clsx(
+        "h-10 w-10 rounded-full bg-[#281C4D] grid place-content-center transition-all duration-300 hover:scale-110",
+        color
+      )}
+      aria-label={alternative}
+    >
+      <FontAwesomeIcon icon={icon} className="w-5 h-5" />
+    </a>
+  );
+};
+
 export default SocialMediaLinks;
-
-

@@ -2,64 +2,74 @@ import FooterComponet from "./FooterComponet";
 import { Github, Twitter, MSquare, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import SocialMediaLinks from "./SocialMediaLinks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faFacebookF,
+  faTiktok,
+  faYoutube
+} from "@fortawesome/free-brands-svg-icons";
 const data1 = [
   { content: "Products", link: "/products" },
   { content: "Games", link: "/games" },
   { content: "Features", link: "/features" },
   { content: "Download", link: "/download" },
-  { content: "System Requirements", link: "/system-requirements" },
+  { content: "System Requirements", link: "/under-development" },
 ];
 
 const data2 = [
-  { content: "Community", link: "/community" },
-  { content: "Discord", link: "/discord" },
-  { content: "Forums", link: "/forums" },
-  { content: "Tournaments", link: "/tournaments" },
-  { content: "Leaderboards", link: "/leaderboards" },
+  { content: "Community", link: "/under-development" },
+  { content: "Discord", link: "/under-development" },
+  { content: "Forums", link: "/under-development" },
+  { content: "Tournaments", link: "/under-development" },
+  { content: "Leaderboards", link: "/under-development" },
 ];
 
 const data3 = [
-  { content: "Support", link: "/support" },
-  { content: "Help Center", link: "/help-center" },
-  { content: "Contact", link: "/contact" },
-  { content: "Bug Reports", link: "/bug-reports" },
-  { content: "Feedback", link: "/feedback" },
+  { content: "Support", link: "/under-development" },
+  { content: "Help Center", link: "/under-development" },
+  { content: "Contact", link: "/contactus" }, // keep real link
+  { content: "Bug Reports", link: "/under-development" },
+  { content: "Feedback", link: "/under-development" },
 ];
 
 const data4 = [
-  { content: "Company", link: "/company" },
-  { content: "AboutUs", link: "/about-us" },
-  { content: "Careers", link: "/careers" },
-  { content: "Press", link: "/press" },
-  { content: "Partners", link: "/partners" },
+  { content: "Company", link: "/under-development" },
+  { content: "AboutUs", link: "/about-us" }, // keep real link
+  { content: "Careers", link: "/under-development" },
+  { content: "Press", link: "/under-development" },
+  { content: "Partners", link: "/under-development" },
 ];
+
+
 
 const icons = [
   {
-    icon: "/home/social_media_links/instagram.png",
+    icon: faInstagram,
     alternative: "instagram",
     color: "text-gray-400",
     link: "https://shorturl.at/XjavH",
   },
   {
-    icon: "/home/social_media_links/facebook.png",
+    icon: faFacebookF,
     alternative: "facebook",
     color: "text-[#79a5d5]",
     link: "https://shorturl.at/Pa2l5",
   },
   {
-    icon: "/home/social_media_links/tiktok.png",
+    icon: faTiktok,
     alternative: "tiktok",
     color: "text-[#c84de5]",
     link: "https://shorturl.at/Mg34q",
   },
   {
-    icon: "/home/social_media_links/youtube.png",
+    icon: faYoutube,
     alternative: "youtube",
     color: "text-[#84147C]",
-    link: "https://shorturl.at/whnI9 ",
+    link: "https://shorturl.at/whnI9",
   },
 ];
+
 const Footer = () => {
   return (
     <footer
