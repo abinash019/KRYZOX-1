@@ -113,7 +113,7 @@ export default function HeroSection() {
         }}
       />
 
-      {/* 🚀 Hero Content */}
+      {/* 🚀 He Content */}
       <div className="relative md:-top-12 flex flex-col items-center justify-center text-center px-4 mt-24 md:mt-32 z-10">
         <h1 className="kryzox text-5xl sm:text-7xl md:text-9xl lg:text-[80px] font-extrabold">
           KRYZOX
