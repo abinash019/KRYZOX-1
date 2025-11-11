@@ -149,16 +149,6 @@ export default function HeroSection() {
             style={{
               backgroundImage: "linear-gradient(to right, #c84de5, #79a5d5, #5e41a1)",
             }}
-            onClick={() => {
-              // Trigger download
-              const link = document.createElement("a");
-              link.href =
-                "https://drive.usercontent.google.com/download?id=1bMlW5JKRwuQJtkTJzJfk2TkGdgn6Vavb&export=download&authuser=2";
-              link.download = "KryzoxApp.apk"; // file name
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
           >
             {/* Glowing overlay */}
             <div
@@ -174,6 +164,7 @@ export default function HeroSection() {
             </span>
           </button>
 
+
           <button
             className="group relative px-10 py-5 border-2 rounded-xl font-semibold text-lg transition-all duration-500 cursor-pointer hover:scale-110 hover:shadow-2xl overflow-hidden"
             style={{
@@ -182,7 +173,7 @@ export default function HeroSection() {
             }}
           >
             <span className="group-hover:text-white transition-colors duration-500 relative z-10">
-              For iOS
+              Download For iOS
             </span>
             {/* Enhanced ripple effect */}
             <div
