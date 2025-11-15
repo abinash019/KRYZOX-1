@@ -91,7 +91,7 @@ const AboutUs = () => {
             </p>
             <p>
               <strong>Industry:</strong>{" "}
-              <span className="text-[#79a5d5]">Online Gaming & Esports</span>
+              <span className="text-[#79a5d5]">IT & Softwares</span>
             </p>
             <p>
               <strong>Email:</strong>{" "}
